@@ -54,7 +54,7 @@ const App = () => {
 
   //useEffect to fetch data by selections
   useEffect(() => {
-    getMovieRequest(searchValue, yearValue, filmType);
+    getMovieRequest(searchValue, parseInt(yearValue), filmType);
   }, [searchValue, yearValue, filmType, page]);
 
   return (

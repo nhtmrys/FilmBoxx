@@ -3,9 +3,25 @@
 import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 
+interface MovieProps {
+  Poster: string;
+  Title: string;
+  Year: string;
+  imdbID: string;
+  Plot: string;
+  Rated: string;
+  Runtime: string;
+  Genre: string;
+  Director: string;
+  Actors: string;
+  Language: string;
+  Country: string;
+  Awards: string;
+}
+
 const MovieDetail = ({ params }: any) => {
   // initializing state
-  const [movie, setMovie] = useState("");
+  const [movie, setMovie] = useState<MovieProps | null>(null);
 
   // fetching data from api
   const getMovieRequest = async (imdbId: string) => {
@@ -36,10 +52,12 @@ const MovieDetail = ({ params }: any) => {
     <div className="mx-auto my-8 max-w-7xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          {!movie.Poster ? <Skeleton className="w-full h-screen" /> : null}
+          {!movie || !movie.Poster ? (
+            <Skeleton className="w-full h-screen" />
+          ) : null}
           <img
-            src={movie.Poster === "N/A" ? "/no-image.png" : movie.Poster}
-            alt={movie.Title}
+            src={movie?.Poster === "N/A" ? "/no-image.png" : movie?.Poster}
+            alt={movie ? movie.Title : ""}
             className="w-full h-auto rounded-lg"
           />
         </div>

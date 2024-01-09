@@ -15,60 +15,62 @@ export type MovieColumn = {
   imdbID: string;
 };
 
+const PosterCell = ({ row }: any) => {
+  // initializing state
+  const [showLargeImage, setShowLargeImage] = useState(false);
+
+  // hovering over image to show large image functions
+  const handleMouseEnter = () => {
+    setShowLargeImage(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowLargeImage(false);
+  };
+
+  return (
+    <div
+      className="flex items-center gap-x-2"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {showLargeImage && (
+        <div
+          style={{
+            backgroundColor: "white",
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-100%, -100%)",
+            zIndex: 1000,
+          }}
+        >
+          <img
+            src={
+              row.original.Poster === "N/A"
+                ? "/no-image.png"
+                : row.original.Poster
+            }
+            alt={row.original.Title}
+            className="w-96 h-96 border"
+          />
+        </div>
+      )}
+
+      {row.original.Poster === "N/A" ? (
+        <img src="/no-image.png" className="w-64 border" />
+      ) : (
+        <img src={row.original.Poster} className="w-64 border" />
+      )}
+    </div>
+  );
+};
+
 export const columns: ColumnDef<MovieColumn>[] = [
   {
     accessorKey: "Poster",
     header: "Poster",
-
-    cell: ({ row }) => {
-      //initializing state
-      const [showLargeImage, setShowLargeImage] = useState(false);
-      //hovering over image to show large image functions
-      const handleMouseEnter = () => {
-        setShowLargeImage(true);
-      };
-
-      const handleMouseLeave = () => {
-        setShowLargeImage(false);
-      };
-
-      return (
-        <div
-          className="flex items-center gap-x-2"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          {showLargeImage && (
-            <div
-              style={{
-                backgroundColor: "white",
-                position: "fixed",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-100%, -100%)",
-                zIndex: 1000,
-              }}
-            >
-              <img
-                src={
-                  row.original.Poster === "N/A"
-                    ? "/no-image.png"
-                    : row.original.Poster
-                }
-                alt={row.original.Title}
-                className="w-96 h-96 border"
-              />
-            </div>
-          )}
-
-          {row.original.Poster === "N/A" ? (
-            <img src="/no-image.png" className="w-64 border" />
-          ) : (
-            <img src={row.original.Poster} className="w-64 border" />
-          )}
-        </div>
-      );
-    },
+    cell: PosterCell,
   },
   {
     accessorKey: "Title",
