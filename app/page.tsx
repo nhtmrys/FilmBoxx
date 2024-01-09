@@ -35,7 +35,7 @@ const App = () => {
     yearValue: number,
     type: []
   ) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&y=${
+    const url = `https://www.omdbapi.com/?s=${searchValue}&y=${
       yearValue > 0 ? yearValue : ""
     }&page=${page}&type=${filmType}&apikey=263d22d8`;
 
