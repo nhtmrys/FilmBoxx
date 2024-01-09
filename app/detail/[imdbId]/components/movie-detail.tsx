@@ -25,7 +25,7 @@ const MovieDetail = ({ params }: any) => {
 
   // fetching data from api
   const getMovieRequest = async (imdbId: string) => {
-    const url = `https://www.omdbapi.com/?i=${imdbId}&apikey=263d22d8`;
+    const url = `http://www.omdbapi.com/?i=${imdbId}&apikey=263d22d8`;
 
     try {
       const response = await fetch(url);
@@ -45,7 +45,7 @@ const MovieDetail = ({ params }: any) => {
   useEffect(() => {
     setTimeout(() => {
       getMovieRequest(params.imdbId);
-    }, 1000);
+    }, 500);
   }, [params.imdbId]);
 
   return (
