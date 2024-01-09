@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FilmBoxx
+
+FilmBoxx is a platform that brings together a wide variety of IMDb movies, allowing users to explore and discover films in one centralized location.
 
 ## Getting Started
 
-First, run the development server:
+To set up and run the development server, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository to your local machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/nhtmrys/FilmBoxx.git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   cd FilmBoxx
+   ```
 
-## Learn More
+3. Install the dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   or
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   yarn install
+   ```
 
-## Deploy on Vercel
+   or
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   pnpm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   or
+
+   ```bash
+   bun install
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   or
+
+   ```bash
+   yarn dev
+   ```
+
+   or
+
+   ```bash
+   pnpm dev
+   ```
+
+   or
+
+   ```bash
+   bun dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your preferred web browser to view the result.
+
+## Features
+
+- **Unified IMDb Collection:** Access a diverse selection of IMDb movies in one place.
+- **User-Friendly Interface:** Enjoy a seamless and intuitive user experience.
+- **Search and Discover:** Easily find your favorite movies or discover new ones.
+- **Responsive Design:** Explore FilmBoxx on various devices with a responsive and adaptive layout.
+
+## Contributing
+
+We welcome contributions to enhance FilmBoxx. To contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make changes and commit them.
+4. Submit a pull request, describing the changes you've made.
+
+## Issues
+
+If you encounter any issues or have suggestions, please open an issue on the [issue tracker](https://github.com/nhtmrys/FilmBoxx/issues).
+
+---
