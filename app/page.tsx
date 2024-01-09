@@ -35,7 +35,9 @@ const App = () => {
     yearValue: number,
     type: []
   ) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&y=${yearValue}&page=${page}&type=${filmType}&apikey=263d22d8`;
+    const url = `http://www.omdbapi.com/?s=${searchValue}&y=${
+      yearValue > 0 && yearValue
+    }&page=${page}&type=${filmType}&apikey=263d22d8`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
